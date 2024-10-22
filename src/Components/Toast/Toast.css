@@ -1,0 +1,27 @@
+/* src/components/CustomToast.css */
+
+.custom-toast {
+    position: fixed;
+    bottom: 20px; /* Position from bottom */
+    right: 20px; /* Position from right */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it’s on top of other elements */
+}
+
+.custom-toast.success {
+    background-color: #4caf50; /* Green for success */
+    color: white;
+}
+
+.custom-toast.error {
+    background-color: #f44336; /* Red for error */
+    color: white;
+}
+
+.custom-toast:hover {
+    opacity: 0.9; /* Slight hover effect */
+}

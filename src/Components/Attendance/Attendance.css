@@ -1,0 +1,244 @@
+/* src/components/Attendance.css */
+
+.attendance-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #f9f9f9, #e0e0e0); /* Gradient background */
+    height: auto; /* Full height */
+    overflow: hidden; /* Remove scrolling */
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.heading {
+    position: relative; /* Make the container the relative positioning context */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background: url("../../Assets/images/Logo.png"); /* Background image */
+    background-size: cover; /* Cover the entire area */
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeIn 1s ease; /* Fade-in animation */
+}
+
+/* Overlay effect using ::before pseudo-element */
+.heading::before {
+    content: ""; /* Create an empty content for the pseudo-element */
+    position: absolute; /* Absolute position relative to the container */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black overlay */
+    z-index: 1; /* Place the overlay below the content inside the container */
+}
+
+.heading h1 {
+    z-index: 2; /* Ensure text appears above the overlay */
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for depth */
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of cards */
+    justify-content: center; /* Center cards horizontally */
+    gap: 20px; /* Space between cards */
+    margin-top: 20px; /* Space above cards */
+}
+
+.user-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent; /* Make background transparent */
+    border: 1px solid #ccc;
+    border-radius: 12px; /* Slightly larger border-radius for rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow for more depth */
+    width: 250px; /* Set a fixed width for cards */
+    height: 40vh; /* Set a fixed height for cards */
+    padding: 20px;
+    text-align: center;
+    background-size: cover;
+    transition: transform 0.3s, box-shadow 0.3s; /* Animation for hover effect */
+    position: relative; /* Position relative for overlay */
+    overflow: hidden; /* Hide overflow content */
+}
+
+/* Overlay effect on user card */
+.user-card::after {
+    content: ""; /* Create an empty content for the overlay */
+    position: absolute; /* Absolute position relative to the card */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 1; /* Place the overlay above the background but below content */
+}
+
+.user-card-content {
+    position: relative; /* Position relative to keep it above the overlay */
+    z-index: 2; /* Ensure content appears above the overlay */
+    color: white; /* White text color */
+}
+
+.user-card:hover {
+    transform: translateY(-8px); /* Lift card on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background change on hover */
+}
+
+.profile-pic {
+    width: 100px; /* Set a fixed width for the profile picture */
+    height: 100px; /* Set a fixed height for the profile picture */
+    border-radius: 50%; /* Circular profile picture */
+    margin-bottom: 10px; /* Space below the image */
+    border: 3px solid #4CAF50; /* Border around the profile picture */
+    transition: transform 0.3s; /* Animation for hover effect */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Animation for button */
+    pointer: cursor; /* Change cursor to pointer */
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); /* Lift button on hover */
+}
+
+button:disabled {
+    background-color: #ccc; /* Gray background when disabled */
+    cursor: not-allowed; /* Change cursor to not-allowed */
+}
+
+p {
+    margin: 10px 0;
+}
+
+.error-message {
+    color: red;
+}
+
+.success-message {
+    color: green;
+}
+
+.current-date {
+    font-size: 30px; /* Adjust font size */
+    color: white; /* Text color */
+    margin-bottom: 20px; /* Space below the date */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center the date */
+    z-index: 4; /* Ensure it appears above other content */
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.attendance-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #f9f9f9, #e0e0e0); /* Gradient background */
+    height: auto; /* Full height */
+    overflow: hidden; /* Remove scrolling */
+}
+
+/* User Attendance Card Styling */
+.user-attendance-card {
+    display: flex;
+    justify-content: space-between; /* Space between name and button */
+    align-items: center; /* Vertically align items */
+    background-color: #ffffff; /* Light background */
+    padding: 15px 25px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animation on hover */
+    margin: 10px 0; /* Space between cards */
+    width: 100%; /* Full width */
+    max-width: 500px; /* Max width for larger screens */
+    position: relative;
+}
+
+/* Hover effect */
+.user-attendance-card:hover {
+    transform: translateY(-5px); /* Lift slightly on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Name styling */
+.user-name {
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Bold text */
+    color: #333333; /* Darker text color */
+}
+
+/* Mark Attendance Button */
+.mark-attendance-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px; /* Font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Button transition */
+}
+
+.mark-attendance-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.mark-attendance-button:disabled {
+    background-color: #ccc; /* Gray when disabled */
+    cursor: not-allowed; /* Disabled cursor */
+}
+
+.error-message {
+    color: red;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .user-attendance-card {
+        flex-direction: column; /* Stack name and button vertically */
+        align-items: center; /* Center items */
+    }
+
+    .mark-attendance-button {
+        margin-top: 10px; /* Add space between name and button */
+    }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .cards-container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center cards */
+    }
+}

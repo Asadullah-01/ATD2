@@ -1,0 +1,79 @@
+/* Login.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+
+.logo-container {
+    position: relative; /* Make the container the relative positioning context */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background: url("../../Assets/images/Logo.png"); /* Background image */
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Overlay effect using ::before pseudo-element */
+.logo-container::before {
+    content: ""; /* Create an empty content for the pseudo-element */
+    position: absolute; /* Absolute position relative to the container */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black overlay */
+    z-index: 1; /* Place the overlay below the content inside the container */
+}
+
+.logo-container h1 {
+    z-index: 2; /* Ensure text appears above the overlay */
+    font-size: 40px;
+    color: white; /* White text to contrast with the dark overlay */
+}
+
+h2 {
+    margin-bottom: 20px; /* Space below the heading */
+    color: #333; /* Dark text color */
+}
+
+.login-form {
+    display: flex; /* Use flexbox for form layout */
+    flex-direction: column; /* Stack items vertically */
+}
+
+label {
+    margin-bottom: 5px; /* Space below labels */
+    text-align: left; /* Align labels to the left */
+}
+
+.input-field {
+    padding: 10px; /* Padding for input fields */
+    margin-bottom: 15px; /* Space below input fields */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Larger text for easier readability */
+}
+
+.input-field:focus {
+    border-color: #007bff; /* Highlight border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.login-button {
+    padding: 10px; /* Padding for button */
+    background-color: #007bff; /* Primary color for button */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Larger text */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.login-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
